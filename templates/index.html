@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Python Calculator</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="calculator">
+
+        <h1>Python Calculator</h1>
+
+        <form method="POST">
+
+            <label>First Number</label>
+
+            <input
+                type="number"
+                name="num1"
+                step="any"
+                required
+            >
+
+            <label>Operation</label>
+
+            <select name="operator">
+
+                <option value="+">Addition (+)</option>
+                <option value="-">Subtraction (-)</option>
+                <option value="*">Multiplication (*)</option>
+                <option value="/">Division (/)</option>
+
+            </select>
+
+            <label>Second Number</label>
+
+            <input
+                type="number"
+                name="num2"
+                step="any"
+                required
+            >
+
+            <button type="submit">
+                Calculate
+            </button>
+
+        </form>
+
+
+        {% if result is not none %}
+
+        <div class="result">
+
+            <h2>Result</h2>
+
+            <p>{{ result }}</p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
